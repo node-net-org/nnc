@@ -96,7 +96,9 @@ describe('LOW-01 framed session, hello by hand', () => {
     await d.until('stdout', /sent \d+ bytes \(framed, eom\)/);
     await vi.waitFor(() => expect(f.server.last()!.version).toBe('1.1'));
     d.line('framing');
-    await d.until('stdout', /^eom \(end-of-message, \]\]>\]\]>\)$/m);
+    // Not anchored at the start: on a slow machine the prompt can still be
+    // arriving when the command is sent, and then precedes the answer on its line.
+    await d.until('stdout', /eom \(end-of-message, \]\]>\]\]>\)$/m);
     d.line(`send ${rpc('1')}`);
     await d.until('stdout', /sent \d+ bytes \(framed, eom\)/);
     await d.finish();
