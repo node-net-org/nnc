@@ -1,0 +1,30 @@
+module ex-json {
+  namespace "urn:example:json";
+  prefix ej;
+  revision 2026-11-09;
+
+  identity base-type;
+  identity fast {
+    base base-type;
+  }
+
+  container top {
+    list item {
+      key "name";
+      leaf name { type string; }
+      leaf count { type int64; }
+      leaf size { type uint32; }
+      leaf big { type uint64; }
+      leaf ratio {
+        type decimal64 { fraction-digits 2; }
+      }
+      leaf on { type boolean; }
+      leaf flag { type empty; }
+      leaf kind {
+        type identityref { base base-type; }
+      }
+      leaf note { type string; }
+      leaf-list tag { type string; }
+    }
+  }
+}

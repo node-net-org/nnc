@@ -1,0 +1,12 @@
+module ex-ident {
+  namespace "urn:example:ident";
+  prefix ei;
+  import ex-json { prefix ej; }
+  revision 2026-11-09;
+
+  // An identity derived from ex-json's base in a module ex-json doesn't import, as iana-if-type
+  // derives interface types from ietf-interfaces: data holds it only as a prefixed value.
+  identity slow {
+    base ej:base-type;
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "name": "@node-net/nnc",
+  "version": "0.1.0",
+  "description": "nnc: an interactive NETCONF client for watching the protocol, built on @node-net/netconf",
+  "keywords": [
+    "netconf",
+    "cli",
+    "yang",
+    "rfc6241",
+    "rfc6242",
+    "network-automation"
+  ],
+  "author": "Mark Abrahams <mark@abrahams.co.nz>",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/node-net-org/nnc.git"
+  },
+  "homepage": "https://net-netconf.abrahams.nz/cli/",
+  "bugs": {
+    "url": "https://github.com/node-net-org/nnc/issues"
+  },
+  "bin": {
+    "nnc": "./dist/main.js"
+  },
+  "exports": {
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "default": "./dist/core.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.tsbuildinfo"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -p tsconfig.check.json",
+    "lint": "eslint .",
+    "layers": "depcruise src --config .dependency-cruiser.cjs",
+    "test": "vitest run",
+    "check": "npm run build && npm run lint && npm run typecheck && npm run layers && node dist/main.js --version && npm run portable:check && npm test && npm run audit:runtime",
+    "portable:check": "node scripts/portable-check.mjs",
+    "check:full": "scripts/check-full.sh",
+    "audit:runtime": "node scripts/audit-runtime.mjs",
+    "deps:report": "node scripts/deps-report.mjs",
+    "prepublishOnly": "node scripts/check-published-deps.mjs"
+  },
+  "dependencies": {
+    "@node-net/netconf": "^0.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.5",
+    "@types/ssh2": "^1.15.6",
+    "dependency-cruiser": "^18.7.2",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "rolldown": "^1.2.16",
+    "ssh2": "^1.17.0",
+    "typescript": "~6.0",
+    "typescript-eslint": "^8.72.1",
+    "vitest": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "allowScripts": {
+    "ssh2@1.17.0": true,
+    "cpu-features@0.0.10": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "ex-json:top": {
+    "item": [
+      {
+        "name": "a",
+        "count": "-5",
+        "size": 7,
+        "big": "18446744073709551615",
+        "ratio": "1.5",
+        "on": true,
+        "flag": [null],
+        "kind": "ex-json:fast",
+        "note": "  padded  ",
+        "tag": [
+          "x"
+        ],
+        "ex-aug:extra": "e"
+      }
+    ]
+  }
+}

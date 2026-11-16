@@ -1,0 +1,10 @@
+module ex-aug {
+  namespace "urn:example:aug";
+  prefix ea;
+  import ex-json { prefix ej; }
+  revision 2026-11-09;
+
+  augment "/ej:top/ej:item" {
+    leaf extra { type string; }
+  }
+}

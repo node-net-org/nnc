@@ -1,0 +1,1 @@
+<top xmlns="urn:example:json"><item><name>a</name><count>-5</count><size>7</size><big>18446744073709551615</big><ratio>1.50</ratio><on>true</on><flag/><kind xmlns:ej="urn:example:json">ej:fast</kind><note>  padded  </note><tag>x</tag><extra xmlns="urn:example:aug">e</extra></item></top>
