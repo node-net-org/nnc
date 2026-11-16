@@ -1,6 +1,6 @@
 {
   "name": "@node-net/nnc",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "nnc: an interactive NETCONF client for watching the protocol, built on @node-net/netconf",
   "keywords": [
     "netconf",
