@@ -2,7 +2,7 @@
 
 `nnc` is an interactive NETCONF client for watching the protocol. It sends operations, traces bytes, frames or XML, connects to production devices read-only, and runs scripts with exit codes. It's built on [@node-net/netconf](https://github.com/node-net-org/netconf), through its public API only.
 
-**📖 Documentation: [net-netconf.abrahams.nz/cli](https://net-netconf.abrahams.nz/cli/)**
+**📖 Documentation: [netconf.node-net.org/cli](https://netconf.node-net.org/cli/)**
 
 > **Status: early development (0.x).** The commands and their output may still change before 1.0.
 

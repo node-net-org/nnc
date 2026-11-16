@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/node-net-org/nnc.git"
   },
-  "homepage": "https://net-netconf.abrahams.nz/cli/",
+  "homepage": "https://netconf.node-net.org/cli/",
   "bugs": {
     "url": "https://github.com/node-net-org/nnc/issues"
   },
